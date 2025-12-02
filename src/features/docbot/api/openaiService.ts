@@ -54,7 +54,7 @@ const tools: ChatCompletionTool[] = [
 ];
 
 // Execute tool calls
-function executeToolCall(toolName: string, args: any): any {
+function executeToolCall(toolName: string, _args: any): any {
     switch (toolName) {
         case 'get_revenue_analysis':
             return MOCK_HOSPITAL_DATA;
@@ -114,8 +114,12 @@ export async function getOpenAIResponse(
         // Check if the model wants to call a tool
         if (assistantMessage.tool_calls && assistantMessage.tool_calls.length > 0) {
             const toolCall = assistantMessage.tool_calls[0];
-            const toolName = toolCall.function.name;
-            const toolArgs = JSON.parse(toolCall.function.arguments);
+
+            // 💡 수정: toolCall을 function 속성을 가진 타입으로 단언합니다.
+            const functionCall = (toolCall as any).function;
+
+            const toolName = functionCall.name;
+            const toolArgs = JSON.parse(functionCall.arguments);
 
             // Execute the tool
             const toolResult = executeToolCall(toolName, toolArgs);

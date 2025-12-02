@@ -29,5 +29,10 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
-  }
+  },
+  "description": "Copy the `src/features/docbot` folder into your React project's `src/features` directory (or equivalent).",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
