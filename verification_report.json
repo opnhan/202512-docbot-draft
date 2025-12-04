@@ -1,0 +1,144 @@
+{
+  "query_parameters": {
+    "region": "강남",
+    "category": "피부과"
+  },
+  "database_info": {
+    "total_records": 537220,
+    "gangnam_records": 131077,
+    "gangnam_dermatology_records": 45388
+  },
+  "monthly_aggregation": [
+    {
+      "year_month": "202504",
+      "avg_revenue": 50372908.570555896,
+      "hospital_count": 1637,
+      "total_transactions": 57275,
+      "min_revenue": 11000,
+      "max_revenue": 1180380932
+    },
+    {
+      "year_month": "202505",
+      "avg_revenue": 47356337.08288288,
+      "hospital_count": 1665,
+      "total_transactions": 56581,
+      "min_revenue": 300,
+      "max_revenue": 1391325493
+    },
+    {
+      "year_month": "202506",
+      "avg_revenue": 47920203.3628483,
+      "hospital_count": 1615,
+      "total_transactions": 55426,
+      "min_revenue": 300,
+      "max_revenue": 1619903151
+    },
+    {
+      "year_month": "202507",
+      "avg_revenue": 45373490.041317366,
+      "hospital_count": 1670,
+      "total_transactions": 53468,
+      "min_revenue": 13100,
+      "max_revenue": 1649705945
+    },
+    {
+      "year_month": "202508",
+      "avg_revenue": 46046370.654844835,
+      "hospital_count": 1579,
+      "total_transactions": 49354,
+      "min_revenue": 11700,
+      "max_revenue": 1485872101
+    },
+    {
+      "year_month": "202509",
+      "avg_revenue": 52249088.76826484,
+      "hospital_count": 1752,
+      "total_transactions": 62978,
+      "min_revenue": 20000,
+      "max_revenue": 1655706993
+    }
+  ],
+  "latest_month_details": {
+    "top_hospitals": [
+      {
+        "hospital_name": "플랜에스의원",
+        "address": "서울특별시 강남구 강남대로 408",
+        "revenue": 1655706993,
+        "transaction_count": 1980,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "세니아의원",
+        "address": "서울특별시 서초구 강남대로 441",
+        "revenue": 1419799028,
+        "transaction_count": 3719,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "브이앤엠제이(V&MJ)피부과의원",
+        "address": "서울특별시 강남구 도산대로 303",
+        "revenue": 1178632512,
+        "transaction_count": 175,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "닥터스피부과의원",
+        "address": "서울특별시 강남구 도산대로12길 7",
+        "revenue": 1148449930,
+        "transaction_count": 281,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "데이뷰의원",
+        "address": "서울특별시 강남구 강남대로 494",
+        "revenue": 978239634,
+        "transaction_count": 420,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "리프톤피부과의원",
+        "address": "서울특별시 강남구 도산대로 119",
+        "revenue": 871628781,
+        "transaction_count": 187,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "더힐피부과의원",
+        "address": "서울특별시 강남구 강남대로 652",
+        "revenue": 865205372,
+        "transaction_count": 196,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "톡스앤필의원",
+        "address": "서울특별시 서초구 강남대로 415",
+        "revenue": 844586170,
+        "transaction_count": 369,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "신사멜로우피부과의원",
+        "address": "서울특별시 강남구 도산대로 138",
+        "revenue": 797429383,
+        "transaction_count": 190,
+        "year_month": "202509"
+      },
+      {
+        "hospital_name": "세니아의원",
+        "address": "서울특별시 서초구 강남대로 441",
+        "revenue": 796983698,
+        "transaction_count": 930,
+        "year_month": "202509"
+      }
+    ]
+  },
+  "calculation_validation": {
+    "overall_avg_revenue": 28751720.242707323,
+    "total_unique_hospitals": 802,
+    "latest_month": "202509",
+    "latest_month_avg": 52249088.76826484,
+    "previous_month": "202508",
+    "previous_month_avg": 46046370.654844835,
+    "growth_rate": 13.47059067893633
+  }
+}

@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { useChatStore } from '../store/useChatStore';
 import { RevenueAnalysisCard } from './bubbles/RevenueAnalysisCard';
 import { PropertyCard } from './bubbles/PropertyCard';
+import { ChartRenderer } from './bubbles/ChartRenderer';
 
 export const MessageList: React.FC = () => {
     const { messages, isLoading } = useChatStore();
@@ -100,6 +101,13 @@ export const MessageList: React.FC = () => {
                                     <div className="prose prose-sm max-w-none text-gray-800">
                                         <ReactMarkdown>{msg.content}</ReactMarkdown>
                                     </div>
+
+                                    {/* Dynamic Visualization Rendering (v2.0) */}
+                                    {msg.type === 'visualization' && msg.visualization && (
+                                        <div className="mt-2 w-full">
+                                            <ChartRenderer config={msg.visualization} />
+                                        </div>
+                                    )}
 
                                     {/* Custom Widget Rendering */}
                                     {msg.type === 'revenue_report' && msg.data && (

@@ -9,8 +9,9 @@ export interface Message {
     role: 'user' | 'assistant' | 'system';
     content: string;
     timestamp: Date;
-    type?: 'text' | 'revenue_report' | 'property_list';
+    type?: 'text' | 'revenue_report' | 'property_list' | 'visualization';
     data?: any;
+    visualization?: VisualizationConfig;
 }
 
 export interface CommercialStat {
@@ -18,24 +19,13 @@ export interface CommercialStat {
     category: string;
     avgMonthlyRevenue: number;
     growthRate: number;
-    floatingPopulation: number;
     referenceDate: string;
 }
 
 export interface DetailedHospitalStats extends CommercialStat {
-    hospitalName: string;
     address: string;
-    openDate: string;
-    area: number;
-    doctorCount: number;
-    equipment: string[];
     monthlyRevenue: { month: string; amount: number; transactionCount: number }[];
-    demographics: {
-        gender: { male: number; female: number };
-        age: { [key: string]: number };
-    };
     dayDistribution: { [key: string]: number };
-    timeDistribution: { [key: string]: number };
 }
 
 export interface Property {
@@ -69,3 +59,35 @@ export interface ChatState {
     addMessage: (message: Message) => void;
     setLoading: (loading: boolean) => void;
 }
+
+// ============================================
+// Visualization System Types (v2.0)
+// ============================================
+
+export interface VisualizationConfig {
+    chartType: 'line' | 'bar' | 'area' | 'pie' | 'comparison' | 'table' | 'metric';
+    title: string;
+    description?: string;
+    data: ChartData;
+    config?: ChartOptions;
+}
+
+export interface ChartData {
+    labels: string[];
+    datasets: Dataset[];
+}
+
+export interface Dataset {
+    name: string;
+    values: number[];
+    color?: string;
+}
+
+export interface ChartOptions {
+    xAxisLabel?: string;
+    yAxisLabel?: string;
+    showLegend?: boolean;
+    showGrid?: boolean;
+    stacked?: boolean;
+}
+
