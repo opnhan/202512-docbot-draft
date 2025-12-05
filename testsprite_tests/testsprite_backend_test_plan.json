@@ -1,0 +1,27 @@
+[
+  {
+    "id": "TC001",
+    "title": "get hospital revenue data with filters and pagination",
+    "description": "Test the /api/hospitals/revenue endpoint to verify it returns hospital revenue data correctly filtered by region, category, yearMonth, and hospitalName. Validate pagination with the limit parameter and ensure the response structure includes success, count, and data fields."
+  },
+  {
+    "id": "TC002",
+    "title": "get aggregated revenue statistics with filters",
+    "description": "Test the /api/hospitals/stats endpoint to ensure it returns aggregated revenue statistics filtered by region, category, and yearMonth. Verify the correctness of the aggregated data and the response structure containing success and stats fields."
+  },
+  {
+    "id": "TC003",
+    "title": "get monthly aggregated statistics for trend analysis",
+    "description": "Test the /api/hospitals/stats/monthly endpoint to confirm it returns monthly aggregated statistics filtered by region and category. Validate the response includes success, count, and data fields and that the data is ordered by month."
+  },
+  {
+    "id": "TC004",
+    "title": "get monthly revenue trend for a specific hospital",
+    "description": "Test the /api/hospitals/trend endpoint to verify it returns monthly revenue trends for a hospital identified by the required code parameter. Check the limit parameter for result count and validate the response structure with success, count, and data fields."
+  },
+  {
+    "id": "TC005",
+    "title": "health check for server and database status",
+    "description": "Test the /health endpoint to ensure it accurately reports the health status of the server and database connection. Validate the response includes status, database, and totalRecords fields indicating system health."
+  }
+]

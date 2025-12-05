@@ -1,0 +1,303 @@
+{
+    "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "SQLite",
+        "better-sqlite3"
+    ],
+    "features": [
+        {
+            "name": "Get Hospital Revenue",
+            "description": "Retrieves a list of hospital revenue data with optional filtering by region, category, yearMonth, and hospitalName.",
+            "files": [
+                "server/index.js"
+            ],
+            "api_doc": {
+                "openapi": "3.0.0",
+                "paths": {
+                    "/api/hospitals/revenue": {
+                        "get": {
+                            "summary": "Get hospital revenue data",
+                            "parameters": [
+                                {
+                                    "name": "region",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "category",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "yearMonth",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "hospitalName",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "limit",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "integer",
+                                        "default": 100
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Successful response",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "success": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "data": {
+                                                        "type": "array"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Aggregated Stats",
+            "description": "Retrieves aggregated revenue statistics filtered by region, category, and yearMonth.",
+            "files": [
+                "server/index.js"
+            ],
+            "api_doc": {
+                "openapi": "3.0.0",
+                "paths": {
+                    "/api/hospitals/stats": {
+                        "get": {
+                            "summary": "Get aggregated revenue statistics",
+                            "parameters": [
+                                {
+                                    "name": "region",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "category",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "yearMonth",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Successful response",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "success": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "stats": {
+                                                        "type": "object"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Monthly Stats",
+            "description": "Retrieves monthly aggregated statistics for trend analysis.",
+            "files": [
+                "server/index.js"
+            ],
+            "api_doc": {
+                "openapi": "3.0.0",
+                "paths": {
+                    "/api/hospitals/stats/monthly": {
+                        "get": {
+                            "summary": "Get monthly aggregated stats",
+                            "parameters": [
+                                {
+                                    "name": "region",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "category",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Successful response",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "success": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "data": {
+                                                        "type": "array"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Hospital Trend",
+            "description": "Retrieves monthly revenue trend for a specific hospital.",
+            "files": [
+                "server/index.js"
+            ],
+            "api_doc": {
+                "openapi": "3.0.0",
+                "paths": {
+                    "/api/hospitals/trend": {
+                        "get": {
+                            "summary": "Get monthly revenue trend for a hospital",
+                            "parameters": [
+                                {
+                                    "name": "code",
+                                    "in": "query",
+                                    "required": true,
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "limit",
+                                    "in": "query",
+                                    "schema": {
+                                        "type": "integer",
+                                        "default": 36
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Successful response",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "success": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "data": {
+                                                        "type": "array"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Health Check",
+            "description": "Checks the health of the server and database connection.",
+            "files": [
+                "server/index.js"
+            ],
+            "api_doc": {
+                "openapi": "3.0.0",
+                "paths": {
+                    "/health": {
+                        "get": {
+                            "summary": "Health check",
+                            "responses": {
+                                "200": {
+                                    "description": "Server is healthy",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "status": {
+                                                        "type": "string"
+                                                    },
+                                                    "database": {
+                                                        "type": "string"
+                                                    },
+                                                    "totalRecords": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
